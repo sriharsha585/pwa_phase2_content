@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resume builder</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+</head>
+<body id="form">
+	<div class="main">
+	<div class="career">
+		<h1>Career Objective</h1>
+    <label for="career">
+		<select id="career" name="career">
+			<option>Select Career Objective</option>
+			<option>To work in an environment where I can utilize my own skills and knowledge</option>
+			<option>To work in a reputed company</option>
+			<option>To secure a challenging position in a reputable organization to expand my learnings, knowledge, and skills</option>
+		</select>
+  </label><br>
+	</div>
+	<div class="sub">
+    <!-- personal information -->
+		<h1>Personal information</h1>
+		<label for="name"><input type="text" name="name" id="name"placeholder="Enter your name"></label><br>
+		<label for="mobile"><input type="number" name="mobile" id="mobile"placeholder="Enter your mobile number"></label><br>
+		<label for="email"><input type="email" name="email" id="email"placeholder="Enter your e-mail address"></label><br>
+		<label for="place"><input type="text" name="place" id="place"placeholder="Enter your place"></label>
+	</div>
+    <div class="sub">
+      <!-- pg details -->
+    	<h1>PG Details</h1>
+      <label for="pdegree">
+    	<select id="pdegree" name="pdegree">
+    		<option>Degree</option>
+    		<option>M.tech</option>
+    		<option>M.Sc</option>
+    		<option>MCA</option>
+    		<option>MBA</option>
+    	</select>
+    </label><br>
+    	<label for="pinst"><input type="text" name="pinst" id="pinst" placeholder="Enter your college name" ></label><br>
+    	<label for="pper"><input type="number" name="pper" id="pper" placeholder="Enter you percentage"></label><br>
+    	<label for="pyear"><input type="text" name="pyear" id="pyear" placeholder="Enter year of passing"></label><br>
+    	
+    </div>
+    <div class="sub">
+    	<h1>Graduation Details</h1>
+      <label for="gdegree">
+    	<select id="gdegree" name="gdegree">
+    		<option>Degree</option>
+    		<option>B.tech</option>
+    		<option>B.sc</option>
+    		<option>B.com</option>
+    	</select>
+    </label><br>
+    	<label for="ginst"><input type="text" name="inst" id="ginst" placeholder="Enter your college name" ></label><br>
+    	<label for="gper"><input type="number" name="per" id="gper" placeholder="Enter you percentage"></label><br>
+    	<label for="gyear"><input type="text" name="year" id="gyear" placeholder="Enter year of passing"></label><br>
+    </div>
+    <div class="sub">
+      <!-- inter details -->
+    	   	<h1>Intermediate Details</h1>
+          <label for="idegree">
+    	<select id="idegree" name="idegree">
+    		<option>Degree</option>
+    		<option>MPC</option>
+    		<option>Bi.PC</option>
+    		<option>MEC</option>
+    	</select>
+    </label><br>
+    	<label for="iinst"><input type="text" name="iinst" id="iinst" placeholder="Enter your college name" ></label><br>
+    	<label for="iper"><input type="number" name="iper" id="iper" placeholder="Enter you percentage"></label><br>
+    	<label for="iyear"><input type="text" name="iyear" id="iyear" placeholder="Enter year of passing"></label><br>
+    </div>
+    <div class="sub">
+      <!-- tenth details -->
+    	<h1>SSC Details</h1>
+      <label for="tdegree">
+    	    <select id="tdegree" name="tdegree">
+    		<option>Board</option>
+    		<option>SSC</option>
+    		<option>CBSE</option>
+    		<option>ICSE</option>
+    	</select>
+    </label><br>
+    	<label for="tinst"><input type="text" name="tinst" id="tinst" placeholder="Enter your school name" ></label><br>
+    	<label for="tper"><input type="number" name="tper" id="tper" placeholder="Enter you percentage"></label><br>
+    	<label for="tyear"><input type="text" name="tyear" id="tyear" placeholder="Enter year of passing"></label><br>
+    </div>
+   </div>
+   <button type="button" id="button" name="button" onclick="submitdata()">Submit</button>
+</body>
+</html>
+<script type="text/javascript">
+	function submitdata() {
+	var career=document.getElementById("career").value;
+	var name=document.getElementById("name").value;
+	var mobile=document.getElementById("mobile").value;
+	var email=document.getElementById("email").value;
+	var place=document.getElementById("place").value;
+
+    var pdegree=document.getElementById("pdegree").value;
+	var pinst=document.getElementById("pinst").value;
+	var pper=document.getElementById("pper").value;
+	var pyear=document.getElementById("pyear").value;
+
+    var gdegree=document.getElementById("gdegree").value;
+	var ginst=document.getElementById("ginst").value;
+	var gper=document.getElementById("gper").value;
+	var gyear=document.getElementById("gyear").value;
+
+    var idegree=document.getElementById("idegree").value;
+	var iinst=document.getElementById("iinst").value;
+	var iper=document.getElementById("iper").value;
+	var iyear=document.getElementById("iyear").value;
+
+    var tdegree=document.getElementById("tdegree").value;
+    var tinst=document.getElementById("tinst").value;
+	var tper=document.getElementById("tper").value;
+	var tyear=document.getElementById("tyear").value;
+
+var indexedDB=window.indexedDB || window.mozIndexedDB || window.msIndexeDB || window.webkitIndexedDB;
+    
+ var store;
+ var open;
+ var tx;
+
+	var request= indexedDB.open("database",1);
+
+	request.onupgradeneeded=function(e)
+	{
+		open=e.target.result; 
+		store=open.createObjectStore("resumedata",{keyPath:"name"});
+
+
+	}
+	request.onerror=function(e){
+
+		console.log("error"+e);
+
+	}
+	request.onsuccess=function(e){
+		console.log("Success");
+    open=e.target.result;
+
+    tx=open.transaction("resumedata","readwrite");
+    store=tx.objectStore("resumedata");
+ store.put({
+   career:career,
+   name:name,
+   mobile:mobile,
+   email:email,
+   place:place,
+   education:[
+   {
+   	degree:pdegree,
+   inst:pinst,
+   per: pper,
+   year:pyear,
+   },
+   {
+   degree:gdegree,
+   inst:ginst,
+   per: gper,
+   year:gyear,
+   },
+   {
+   degree:idegree,
+   inst:iinst,
+   per: iper,
+   year:iyear,
+   },
+   {
+   degree:tdegree,
+   inst:tinst,
+   per: tper,
+   year:tyear,
+   }
+  ]
+ });
+
+ }
+ window.open("index.html","_self");
+ 
+
+}
+</script>

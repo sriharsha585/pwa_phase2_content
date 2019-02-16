@@ -1,0 +1,271 @@
+#form
+{
+	background:/*#ECF0F1*/mediumspringgreen ;
+}
+/*carrer objective*/
+.main
+{
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 1%;
+}
+.career
+{
+	color:  black;
+	padding: 2%;
+	background:/*#9A9294*/gainsboro;
+	width: 90%;
+	text-align: center;
+	box-shadow: 1px 1px 1px 1px black;
+	margin:2%;
+	border-radius: 2px;
+}
+.sub
+{
+	color: black;
+	width:43%;
+	border-radius: 2px;
+	background: /*#9A9294*/gainsboro;
+	box-shadow: 1px 1px 1px 1px black;
+	margin: 2%;
+	padding: 1%;
+	text-align: center;
+}
+#button
+{
+	background-color: black;
+	color:white;
+	border-radius: 5px;
+	width: 10%;
+    display: block;
+	margin:10px auto;
+
+}
+select,input
+{
+	width:90%;
+	margin: 1%;
+
+}
+/*mobile view*/
+@media screen and (max-width: 480px)
+{
+	#form
+{
+	background:bisque;
+}
+.main
+{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 1%;
+}
+.career
+{
+	color: #E2ED3F;
+	padding: 1%;
+	background:#D52826;
+	width: 95%;
+	text-align: center;
+	box-shadow: 1px 1px 1px 1px black;
+	margin:1%;
+	border-radius: 2px;
+}
+.sub
+{
+	color: #E2ED3F ;
+	width:95%;
+	border-radius: 2px;
+	height: 60%;
+	background: #D52826;
+	box-shadow: 1px 1px 1px 1px black;
+	margin: 1%;
+	padding: 1%;
+	text-align: center;
+}
+#button
+{
+	background-color:#D52826 ;
+	color:#E2ED3F;
+	height: 30%;
+	border-radius: 5px;
+	width: 25%;
+	box-shadow: 1px 1px 1px black;
+	margin-right:120px;
+}
+select,input
+{
+	width:90%;
+	margin: 1%;
+
+}
+}
+@media screen and (min-width: 481px) and (max-width: 720px)
+{
+		#form
+{
+	background:pink;
+}
+.main
+{
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 1%;
+}
+.career
+{
+	color:  blue;
+	padding: 2%;
+	background:skyblue;
+	width: 90%;
+	text-align: center;
+	box-shadow: 1px 1px 1px 1px black;
+	margin:2%;
+	border-radius: 2px;
+}
+.sub
+{
+	color: blue;
+	width:43%;
+	border-radius: 2px;
+	background: skyblue;
+	box-shadow: 1px 1px 1px 1px black;
+	margin: 2%;
+	padding: 1%;
+	text-align: center;
+}
+#button
+{
+	background-color:skyblue ;
+	color:black;
+	height: 30%;
+	border-radius: 5px;
+	width: 25%;
+	box-shadow: 1px 1px 1px black;
+	margin-right:150px;
+}
+}
+
+/*index.html*/
+.profile
+{
+	color: red;
+	text-align: center;
+}
+#body
+{
+	background-image: url("images/wood.jpg");
+
+}
+#head
+{
+	font-size:40px;
+}
+.first
+{
+	color: #C70039;
+	background:#FAD7A0/*lightsalmon*/;
+	text-align: center;
+	height: 5%;
+	padding: 2%;
+	width: 94%;
+	margin: 1%;
+	border-radius: 4px; 
+	box-shadow: 1px 1px 1px black;
+}
+.second
+{
+
+  text-align: center;
+}
+#img
+{ 
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  height:25%;
+	
+}
+
+@media screen and (max-width: 480px)
+{
+	#body
+{
+	background-image: url("images/wood.jpg");
+}
+#head
+{
+	font-size:40px;
+}
+.first
+{
+	color: #C70039;
+	background:#FAD7A0/*lightsalmon*/;
+	text-align: center;
+	height: 5%;
+	padding: 2%;
+	width: 94%;
+	margin: 1%;
+	border-radius: 4px; 
+	box-shadow: 1px 1px 1px black;
+}
+.second
+{
+
+  text-align: center;
+}
+#img
+{ 
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  height:25%;
+	
+}
+
+
+}
+
+
+/*resume.html>*/
+.rbody
+{
+	background: bisque;
+}
+.maindiv{
+	display: flex;
+	margin:2%;
+}
+.leftdiv
+{
+	text-align: center;
+	margin: 2%;
+	height: 20%;
+	box-shadow: 1px 1px 1px black;
+	background: pink;
+	border-radius: 2px;
+}
+.rightdiv{
+	margin: 2%;
+	background: palegreen;
+	width:70%;
+	padding: 2%;
+	box-shadow: 1px 1px 1px black;
+	border-radius: 2px;
+
+}
+img{
+	margin: 4%;
+	width:30%;
+	height: 20%
+}
